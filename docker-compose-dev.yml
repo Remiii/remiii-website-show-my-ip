@@ -1,0 +1,20 @@
+version: "2"
+
+services:
+    engine:
+        volumes:
+            - remiii_remiii-website-show-my-ip_rsync-sync:/home/docker:rw # will be mounted on /var/www
+            - remiii_remiii-website-show-my-ip_vars-cache:/home/docker/vars/cache
+            - remiii_remiii-website-show-my-ip_vars-logs:/home/docker/vars/logs
+            - remiii_remiii-website-show-my-ip_vendor:/home/docker/vendor
+    db:
+        volumes:
+            - remiii_remiii-website-show-my-ip_var-lib-mysql:/var/lib/mysql
+
+volumes:
+    remiii_remiii-website-show-my-ip_rsync-sync:
+        external: true
+    remiii_remiii-website-show-my-ip_vars-cache:
+    remiii_remiii-website-show-my-ip_vars-logs:
+    remiii_remiii-website-show-my-ip_vendor:
+    remiii_remiii-website-show-my-ip_var-lib-mysql:
